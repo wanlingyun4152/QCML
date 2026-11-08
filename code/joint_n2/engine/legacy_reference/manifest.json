@@ -1,0 +1,172 @@
+{
+  "data_root": "/online1/huangdq_group/liujie/taoyx/trans/data",
+  "files_sha256": {
+    "samples.tsv": "9ac599a32f378fcaff44029fe33e0f09ddfabbc4c324b3684f010122031bf0d0",
+    "schema.json": "466c0156d83525f362fceec5706642f4cf65ad3bb14a84de6c5fd8ce983f8ded",
+    "source_inventory.tsv": "5743157b6755f3d6b5a3694c70fda379791956f384d72a2b35114511ead249a5",
+    "task_split_counts.tsv": "d5bcaf19af7d8c2bdab38f0552a78b8f17bbefc49b6d0fda4af4b9d3bef39055",
+    "test.npz": "28472d216bdcab1f71e3e8e1ba84ec18e61b20e70b426a473c0f08e1e10603ae",
+    "train.npz": "6b0408acfe6ea56c1cdc7ce47e37af853312c6457253376a98e0b06894a6cfd3",
+    "val.npz": "998d7efbaec14412059a9ec1c6a573f9d22648e3879c1a0ba9e77274712b2e4d"
+  },
+  "h6_included": false,
+  "input_dim": 14,
+  "input_energy_columns_used": false,
+  "input_task_id_used": false,
+  "output_dim": 303,
+  "prepare_seconds": 0.8581531960517168,
+  "rows": 3987,
+  "scaler_train_indices_hash": "accb956fabfe279f5f07bafbdd3d7e6d46177adb4af690ff8de1ef31176ec2cd",
+  "source_fingerprint": "2168ad89696f62c8094dbd705365f1f1c9702d992f10f022fe098e481369eb29",
+  "source_inventory": [
+    {
+      "bytes": 21651,
+      "relative_path": "ucc/ucc_H2_data.txt",
+      "rows": 241,
+      "sha256": "c22382a17b46e98fd21e82946004e4ba297291bb4f20971fdafead71ffb89d8c",
+      "stored_parameter_columns": 1
+    },
+    {
+      "bytes": 21885,
+      "relative_path": "uccg/uccg_H2_data.txt",
+      "rows": 241,
+      "sha256": "428e2ac2471189d5724027521d9676d082087c55865805c7620db8e6a371160c",
+      "stored_parameter_columns": 1
+    },
+    {
+      "bytes": 20355,
+      "relative_path": "ucc/ucc_HeH+_data.txt",
+      "rows": 191,
+      "sha256": "d6f6eb6eb8d25d90a7e43f849e1e0cc4049d870b10df0a4cd21c2bbf9ab34dd8",
+      "stored_parameter_columns": 2
+    },
+    {
+      "bytes": 25517,
+      "relative_path": "uccg/uccg_HeH+_data.txt",
+      "rows": 191,
+      "sha256": "885c8013644959f76b074ea70c4f372dad392895c50273321f4666857164bc6a",
+      "stored_parameter_columns": 4
+    },
+    {
+      "bytes": 99593,
+      "relative_path": "ucc/ucc_LiH_data.txt",
+      "rows": 291,
+      "sha256": "138f7a0770486934eae775601f7283c65a489f3e0c2f06550251d700202dc56e",
+      "stored_parameter_columns": 20
+    },
+    {
+      "bytes": 457555,
+      "relative_path": "uccg/uccg_LiH_data.txt",
+      "rows": 291,
+      "sha256": "f255c86dd2c9a49928b32d3e9baa8974a7e3735fd903209929cf12b9e225079b",
+      "stored_parameter_columns": 111
+    },
+    {
+      "bytes": 129683,
+      "relative_path": "uccg/uccg_H4_data.txt",
+      "rows": 206,
+      "sha256": "01f0eedf0725c122f2a9979dec396ff5d5be9caa1c514001704dea83b22c704c",
+      "stored_parameter_columns": 66
+    },
+    {
+      "bytes": 376667,
+      "relative_path": "uccg/uccg_BeH2_data.txt",
+      "rows": 238,
+      "sha256": "e086820b4a807a507ffdc7efdbf2e91da815c64dc663f5faf6921789f442e474",
+      "stored_parameter_columns": 111
+    },
+    {
+      "bytes": 460401,
+      "relative_path": "uccg/uccg_H2O_data.txt",
+      "rows": 175,
+      "sha256": "35ce7162820b94298ab9dfba158ddc2dab67120344f44403ae3818ab359608ec",
+      "stored_parameter_columns": 189
+    },
+    {
+      "bytes": 135691,
+      "relative_path": "1kupccgsd/1kupccgsd_LiH_data.txt",
+      "rows": 291,
+      "sha256": "5d58f09c5b4a7a636d434cec051b7a53f6959f03d883956fb8c15e585fb80e30",
+      "stored_parameter_columns": 30
+    },
+    {
+      "bytes": 257859,
+      "relative_path": "2kupccgsd/2kupccgsd_LiH_data.txt",
+      "rows": 291,
+      "sha256": "27ce1217a7e7b67bbaff78981792c43ad8ccf3e0d70d987457ed977ddfcf9a22",
+      "stored_parameter_columns": 60
+    },
+    {
+      "bytes": 373081,
+      "relative_path": "3kupccgsd/3kupccgsd_LiH_data.txt",
+      "rows": 291,
+      "sha256": "da9d9ef47c0fe6ddd8e8063481187c6a6820a13b400d4b524d06ca0f5845e1bd",
+      "stored_parameter_columns": 90
+    },
+    {
+      "bytes": 83248,
+      "relative_path": "2kupccgsd/2kupccgsd_H4_data.txt",
+      "rows": 206,
+      "sha256": "79c43d5339baa9445ecbe473eabd939f7bcb5ff2ef44ddebd7f7cca64f4c6373",
+      "stored_parameter_columns": 24
+    },
+    {
+      "bytes": 115304,
+      "relative_path": "3kupccgsd/3kupccgsd_H4_data.txt",
+      "rows": 206,
+      "sha256": "0692551bb2a15dd1525f8af59a960f0ee04f6c0dca960454f130fd97176db362",
+      "stored_parameter_columns": 36
+    },
+    {
+      "bytes": 278765,
+      "relative_path": "2kupccgsd/2kupccgsd_BeH2_data.txt",
+      "rows": 231,
+      "sha256": "5d9eac11c536e22282e3bb0a0af7c1d08e73a35f5bfe70978aea9dcf7a2a67af",
+      "stored_parameter_columns": 84
+    },
+    {
+      "bytes": 410981,
+      "relative_path": "3kupccgsd/3kupccgsd_BeH2_data.txt",
+      "rows": 231,
+      "sha256": "8c291d6514b534fb485b58ecf4568b2322f6803e7338e651fa0d4a371667b4c8",
+      "stored_parameter_columns": 126
+    },
+    {
+      "bytes": 311708,
+      "relative_path": "3kupccgsd/3kupccgsd_H2O_data.txt",
+      "rows": 175,
+      "sha256": "8ce130468bfd8e003e3c1b98e29adc58f31bf77ac926f085a542fce6f804bb4f",
+      "stored_parameter_columns": 126
+    }
+  ],
+  "split": {
+    "geometry_group_counts": {
+      "test": 204,
+      "train": 934,
+      "val": 204
+    },
+    "geometry_overlap_train_test": 0,
+    "geometry_overlap_train_val": 0,
+    "geometry_overlap_val_test": 0,
+    "interpretation": "New within-range grouped random split. NOT broad OOD, NOT an untouched external dataset: source data were historically used.",
+    "method": "molecule + R grouped random; stratified by molecule; same molecule/R in different ansatz tables stays in one split",
+    "sample_counts": {
+      "test": 605,
+      "train": 2777,
+      "val": 605
+    },
+    "seed": 42,
+    "test_fraction_of_groups": 0.15,
+    "val_fraction_of_groups": 0.15
+  },
+  "status": "PREPARED",
+  "version": "1.0.0",
+  "warnings": [
+    "ucc/H2: no_parameters differs from stored valid label count; retained both",
+    "uccg/H2: no_parameters differs from stored valid label count; retained both",
+    "ucc/LiH: no_parameters differs from stored valid label count; retained both",
+    "uccg/LiH: no_parameters differs from stored valid label count; retained both",
+    "uccg/BeH2: no_parameters differs from stored valid label count; retained both",
+    "uccg/H2O: no_parameters differs from stored valid label count; retained both"
+  ]
+}

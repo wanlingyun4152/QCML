@@ -1,0 +1,42 @@
+{
+  "schema": "qcml_n2_pilot_v1",
+  "basis": "sto-3g",
+  "bond_lengths_angstrom": [
+    1.05,
+    1.35,
+    1.65,
+    1.95,
+    2.25,
+    2.55,
+    2.85,
+    3.15,
+    3.45
+  ],
+  "symmetry": "D2h",
+  "ncore": 2,
+  "ncas": 8,
+  "nelecas": [
+    5,
+    5
+  ],
+  "ansatz": "uccsd",
+  "layers": 1,
+  "seeds": [
+    0
+  ],
+  "init_scale": 0.01,
+  "optimizer": {
+    "maxiter": 400,
+    "ftol": 1e-13,
+    "gtol": 1e-07,
+    "maxls": 40,
+    "maxcor": 30
+  },
+  "thresholds": {
+    "reference_residual_Eh": 1e-07,
+    "abs_S2": 1e-06,
+    "vqe_gradient_inf": 1e-05,
+    "chemical_accuracy_Eh": 0.0016
+  },
+  "note": "Nine existing held-out test geometries; input configuration only. Use the full-grid configuration in code/n2_reference/configs for the archived dataset export interface."
+}

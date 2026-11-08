@@ -1,0 +1,61 @@
+{
+  "domain": "old",
+  "samples": 605,
+  "tasks": 17,
+  "feature_order": [
+    "bondlengths",
+    "no_qubits",
+    "no_parameters",
+    "no_gates",
+    "no_Pauli_strings",
+    "no_electron",
+    "HOMO (eV)",
+    "LUMO (eV)",
+    "system_BeH2",
+    "system_H2",
+    "system_H2O",
+    "system_H4",
+    "system_HeH+",
+    "system_LiH"
+  ],
+  "numeric_features": [
+    "bondlengths",
+    "no_qubits",
+    "no_parameters",
+    "no_gates",
+    "no_Pauli_strings",
+    "no_electron",
+    "HOMO (eV)",
+    "LUMO (eV)"
+  ],
+  "input_dim": 14,
+  "preprocessing": {
+    "mean": [
+      1.844332012963632,
+      10.175009002520707,
+      128.28411955347497,
+      23678.021606049693,
+      475.47029168167086,
+      4.442203817068779,
+      -10.900582611729142,
+      3.4465305489920475
+    ],
+    "scale": [
+      0.7889370069698394,
+      3.7467040190545755,
+      182.32647970972099,
+      37537.02008704229,
+      324.94440165915665,
+      2.1233965725204262,
+      9.295318741562165,
+      6.9338968413129125
+    ],
+    "fit_split": "train"
+  },
+  "feature_units": {
+    "bondlengths": "angstrom",
+    "HOMO (eV)": "eV",
+    "LUMO (eV)": "eV"
+  },
+  "note": "Only inputs from the existing held-out split. HOMO/LUMO are model input features; VQE/FCI target energies and parameter labels are absent."
+}

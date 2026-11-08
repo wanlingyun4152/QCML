@@ -1,0 +1,37 @@
+{
+  "schema": "qcml_input_only_test_package_v1",
+  "scope": "source code and held-out/initial-condition inputs only",
+  "model_inputs": {
+    "legacy17": [
+      605,
+      14
+    ],
+    "n2": [
+      9,
+      6
+    ]
+  },
+  "geometry_cases": {
+    "lih": 44,
+    "basis_cases": [
+      30,
+      30,
+      30
+    ],
+    "dynamics_initial_state": 1
+  },
+  "files_sha256": {
+    "basis_cases/lih_cases.json": "4f14d64921b1cb069ac67ca81910c3929fea5ba90b4a4e0da3971b4af1765fd4",
+    "dynamics/lih_initial_conditions.json": "635d83f91309c3d6bb4a6970c06c8ca8f986bb69c3285a5c8b0663c0fdfb0979",
+    "legacy17/feature_metadata.json": "2d092270454e0c285ddfc38bf5fcbc21b9cf420f4d559413f147cdc631b9d481",
+    "legacy17/model_inputs.npz": "d46346e1ccf7588ffbda36b7a2248298d2c337273be976a16b125fc5bfea76e0",
+    "legacy17/test_inputs.csv": "b912d19388ef32515f6afc413d4294e97e0021cd4b8c27e7642c2a6e6d4f947b",
+    "lih/molecule_config.json": "228ed8dfeb841469bbb42a9b2d6d1246f74a8effc3d41697faabc4af72d120c1",
+    "lih/test_geometries.csv": "639e645557d524018521865fdc01b70f8b3008081137921d407158a31480c5a7",
+    "n2/feature_metadata.json": "2d84a55c4f51ee107ba7ba4526e0817ff13fc30cb85cddaf45a2fcecb6f39ecd",
+    "n2/model_inputs.npz": "f53e95fcf0e9438e9554855bf959076838447e7f9f072cc655acd0fa2290a2b7",
+    "n2/molecule_config.json": "a9ff7a39462f54c44a2f072c20ad4cb0d6abb67f0c8b28555c8de6f08a3887d3",
+    "n2/parameter_map.json": "360ceaffb08deddfe79c5bf043dd0c440a607d4ff5af891887ac0989bcf92a0e",
+    "n2/test_inputs.csv": "d43fc9592ba551e533d90ac797903e67c799cbc50ba7a84235ada1f7171e605a"
+  }
+}

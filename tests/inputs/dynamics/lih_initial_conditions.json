@@ -1,0 +1,41 @@
+{
+  "system": "LiH",
+  "basis": "sto-3g",
+  "atom_order": [
+    "Li",
+    "H"
+  ],
+  "time_au": 0.0,
+  "dt_au": 2.5,
+  "steps": 3200,
+  "coordinates_bohr": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      2.9243511777644335
+    ]
+  ],
+  "velocities_au": [
+    [
+      0.0,
+      0.0,
+      0.0004720710079845898
+    ],
+    [
+      0.0,
+      0.0,
+      0.0012455457369426428
+    ]
+  ],
+  "masses_au": [
+    12789.392907935853,
+    1837.1525882026936
+  ],
+  "ansatz": "original single-exponential UCCGSD parameterization",
+  "note": "Initial-condition inputs only; no energies, gradients, propagated trajectory or predicted parameters."
+}

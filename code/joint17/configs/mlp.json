@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "seed": 0,
+  "selection_metric": "sample_mean_MSE",
+  "training": {
+    "epochs": 3000,
+    "batch_size": 64,
+    "lr": 0.001,
+    "weight_decay": 0.001,
+    "loss": "weighted",
+    "max_grad_norm": 0.1,
+    "scheduler_factor": 0.5,
+    "scheduler_patience": 50,
+    "min_lr": 1e-06,
+    "log_every": 25
+  },
+  "invariance": {
+    "atol": 1e-05,
+    "rtol": 1e-05
+  },
+  "model": "mlp",
+  "architecture": {
+    "hidden": [
+      224,
+      224
+    ],
+    "dropout": 0.1
+  }
+}

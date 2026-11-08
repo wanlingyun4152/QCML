@@ -1,0 +1,10 @@
+{
+  "system": "LiH",
+  "basis": "sto-3g",
+  "ansatz": "2-UpCCGSD",
+  "geometry": "Li at (0,0,0), H at (0,0,R); R is listed in test_geometries.csv in angstrom",
+  "charge": 0,
+  "spin_2S": 0,
+  "samples": 44,
+  "note": "Geometries only; VQE angles, integrals and energy references are not included."
+}

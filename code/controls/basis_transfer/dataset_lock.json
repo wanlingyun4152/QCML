@@ -1,0 +1,33 @@
+{
+  "manifest_sha256": "1f5144dce9bbcbb1105d6eec8ba1860c329881d98a5de96d505d6bd1faea6fa5",
+  "reviewed_source_archive": "qcml_regauge_zhjp6ejq_audit.tar.gz",
+  "coordinate_policy": "stage4_two_chart_regauge_v1_1_pullback",
+  "files": {
+    "basis_0/parameter_map.json": "48db654fcb8fd14cfa6e6cbeb7fdecc54a40681f3eb87014462652ed06ab3210",
+    "basis_0/train.npz": "aa109d401fbee967937f35733db1c3c9bfff14d60c7bcae27acf5168c357c848",
+    "basis_0/train_index.tsv": "983e3afcabdea28cadb6ba1c027571797dea32cec67623b03364dc866558a1ef",
+    "basis_0/val.npz": "7ecb599484e6d1fe6888f5b936dff1aa9010c5c3a24bc7352f85344292d14279",
+    "basis_0/val_index.tsv": "d4030685f32c50ebf51670dcf7c677954132876b02002c5bb88d30a5a9366bc8",
+    "basis_0/test.npz": "e7639d54408d02a98eb7f8c1659f51cea89c0b97896caf17275d0377eb0e0e77",
+    "basis_0/test_index.tsv": "1697f915ceea83a4511cde6fe8b2b8c46fc54682dd2889bc14890e79304f042b",
+    "basis_1/parameter_map.json": "3a3fb57d7349e26e46a7633d60b057153d9118fd3239984169e7f53bc73a022d",
+    "basis_1/train.npz": "de99129938a8d3eae95d7d8fce56ca3d1ff85b7bb87aa36392a697abac51f20f",
+    "basis_1/train_index.tsv": "a5ac92773d12707fad9480a49d7b716a94bd5e64431fe8e5b72ad6fa2048a6b0",
+    "basis_1/val.npz": "60afe2e7e1155621692ed85851782ad7dee5fc9b6f00f562318a22e878bd56bf",
+    "basis_1/val_index.tsv": "c8ab1d0c210751468c9085b2d61e3f51139e265f6e428820c1e92f1ff0d09428",
+    "basis_1/test.npz": "799fb3d5033903d1348fc0f9461eaf603b9c6426fa0553c057e4e7bc09ee23d1",
+    "basis_1/test_index.tsv": "70a252503e7a6fbd69a0ac81cea8075ccc6e3bca637c10ea99eb287a5e4fe5b8",
+    "basis_2/parameter_map.json": "dbc659684c223dab56b7d95c06054b1bfc04f503dafeff23ff4c425d329f0d6d",
+    "basis_2/train.npz": "bf3ea0947c1f7fbf6ce215f48f6d275dbc5a6241d8829b2790ee1fe4137e4396",
+    "basis_2/train_index.tsv": "9e2d2f2978c272cdd92233892aae7c31c837fe3e1715553a5a7f4968336f9581",
+    "basis_2/val.npz": "bc509dac5b02da3c25c9fedffbf2fe55f31ebdb54ea3331d1a61d34a0d3f7bad",
+    "basis_2/val_index.tsv": "f1f9a761b7575ae8935c7cff23086f621ee5921fc8dfefae42588f57a98e8a00",
+    "basis_2/test.npz": "93d1a5235f13f68dba816d6b971e788c8af9fac44f6034a577424cd5a666b895",
+    "basis_2/test_index.tsv": "f755181dd263930b926f48d6a6805667b426fa022badd357ec2a7680e52f86eb",
+    "split.json": "0d4a6df7404aca20d2af98aa69fea07532298d44481d0acee359af9e09677789",
+    "training_parameter_continuity.tsv": "d2da99300c066a865ee67be3c48e563edb80745bf73624e89983c0b727ab8e6f",
+    "coordinate_changes.tsv": "32c08f86c5e321515733949ab440bcb0514d9ade191a2f68006d330d76b1a248"
+  },
+  "dataset_path_at_delivery": "/online1/huangdq_group/liujie/taoyx/trans/revision_runs/qcml_regauge_zhjp6ejq/release/dataset_stage4",
+  "test_arrays_must_not_be_opened_or_hashed": true
+}

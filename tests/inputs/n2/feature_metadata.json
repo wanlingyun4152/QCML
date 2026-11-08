@@ -1,0 +1,37 @@
+{
+  "domain": "n2",
+  "samples": 9,
+  "input_dim": 6,
+  "feature_order": [
+    "R_angstrom",
+    "n_spatial",
+    "n_electrons",
+    "n_parameters",
+    "HOMO_canonical_Eh",
+    "LUMO_canonical_Eh"
+  ],
+  "preprocessing": {
+    "offset": [
+      1.8,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      20,
+      4,
+      640,
+      1,
+      1
+    ]
+  },
+  "feature_units": {
+    "R_angstrom": "angstrom",
+    "HOMO_canonical_Eh": "Eh",
+    "LUMO_canonical_Eh": "Eh"
+  },
+  "note": "The theta target array and all reference energy/wavefunction results have been excluded."
+}

@@ -1,0 +1,11 @@
+--- force.py (uploaded original)
++++ force.py (single-line candidate, NOT deployed)
+@@ -106,7 +106,7 @@
+         # a specific atom is zero.
+         s_r[:, p0:p1] = s1[:, p0:p1]
+         # (\nabla \| \ ) +  (\| \nabla)
+-        return (s_r + s_r).transpose((0, 2, 1))
++        return s_r + s_r.transpose((0, 2, 1))
+ 
+     return ovlp_deriv
+ 

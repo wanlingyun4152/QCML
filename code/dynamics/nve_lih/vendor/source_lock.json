@@ -1,0 +1,167 @@
+{
+  "version": "aimd_dt25_compare_v1",
+  "scientific_sources": [
+    {
+      "name": "atom_force.py",
+      "role": "run",
+      "sha256": "c0f364bde398f8638cfd3087752b6bc622601fba1e61f746faceaf7170215873",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/lih_uccg/aimd_dipole/atom_force.py"
+    },
+    {
+      "name": "integrators.py",
+      "role": "run",
+      "sha256": "34bcec598a67fa9b606e5961531ef648ae95dc584899d0db5a6709c0fde8d142",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/lih_uccg/aimd_dipole/integrators.py"
+    },
+    {
+      "name": "md.py",
+      "role": "run",
+      "sha256": "79d91c7ddedae00043dc9b50555ecdfa65bb34abe13b239c37eb70fedaff90ed",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/lih_uccg/aimd_dipole/md.py"
+    },
+    {
+      "name": "nn_input.py",
+      "role": "run",
+      "sha256": "af339c9bb9fb2144331d315e778fcfd7cf0308665c15141f61a46b31d4ffe047",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/lih_uccg/aimd_dipole/nn_input.py"
+    },
+    {
+      "name": "nn_output.py",
+      "role": "run",
+      "sha256": "b63a959d922ac7e182f2a18d723d0858c7c2e3bb5e7e28737b1644b98c84de6c",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/lih_uccg/aimd_dipole/nn_output.py"
+    },
+    {
+      "name": "algorithms.py",
+      "role": "backend",
+      "sha256": "09189fa98d2fd3f61b4b93775f06f9e253df5c4f3853ae806b0ee34900d7caae",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/algorithms.py"
+    },
+    {
+      "name": "ansatz_pool.py",
+      "role": "backend",
+      "sha256": "f32d881bef8f001a13a4ca0c02c8216a441ca4175923e222ede91674dbdf972e",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/ansatz_pool.py"
+    },
+    {
+      "name": "cnots_count.py",
+      "role": "backend",
+      "sha256": "0582493788d1a0b9d5fd262122ec909ffa5e8137bc6a9f90e1b3f6bbff696249",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/cnots_count.py"
+    },
+    {
+      "name": "fermion_operator.py",
+      "role": "backend",
+      "sha256": "4a91947ac2a842b2e43917c75a97a17aa24e39183d2176e823ea74f493181f12",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/fermion_operator.py"
+    },
+    {
+      "name": "hamiltonian_operator.py",
+      "role": "backend",
+      "sha256": "84de5889648e986a0d9b19ff29d857d36c21f9584749cdffd95deecbd714da2f",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/hamiltonian_operator.py"
+    },
+    {
+      "name": "qubit_operator.py",
+      "role": "backend",
+      "sha256": "269f17100887ca3ad93bd7c9ab1795626344a2fa5a08f28bab0a20cdaf7aa0a0",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/qubit_operator.py"
+    },
+    {
+      "name": "reference_state.py",
+      "role": "backend",
+      "sha256": "3b10da08c77b0e867ac64671c08d4df37c44e85806639db0003c637e436d2edf",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/reference_state.py"
+    },
+    {
+      "name": "scf_from_pyscf.py",
+      "role": "backend",
+      "sha256": "0d1c9fff9a7a8b44ca2b289b14498aa9ea0805004d6f36fae991d5bb50156f4f",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/scf_from_pyscf.py"
+    },
+    {
+      "name": "set_options.py",
+      "role": "backend",
+      "sha256": "0afa59534d87bfa324acf33dbc3045ba422a6d16bac8eac3adce6ad09470827c",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/set_options.py"
+    },
+    {
+      "name": "tools.py",
+      "role": "backend",
+      "sha256": "7037369bc658a9f1a4420d26c9d32d8145fa06ef90ac42998c98f4378710c4a4",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/tools.py"
+    },
+    {
+      "name": "vqe_opt.py",
+      "role": "backend",
+      "sha256": "84a886f52c1c82fb06abfdcd6782fc50604f1862d5a879b8170298b970d7032f",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/vqe_opt.py"
+    },
+    {
+      "name": "ansatz.py",
+      "role": "backend",
+      "sha256": "26d10a9ee843d010e90565670cd5b7755cb5a9e03ae98ebbf32ffc26882ccc3e",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/ansatz.py"
+    },
+    {
+      "name": "rdm.py",
+      "role": "backend",
+      "sha256": "a5a2f94052724d030bf42f6931cead219ce734bfd7fc032d6cc8229836f1745c",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/rdm.py"
+    },
+    {
+      "name": "operators.py",
+      "role": "backend",
+      "sha256": "7ab02de063efcc5bca4e1a86c516df856a1e3bac74c7c3b756cbe0c75eaa6dba",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/operators.py"
+    },
+    {
+      "name": "pbc_scf_from_pyscf.py",
+      "role": "backend",
+      "sha256": "4f567a2597f4a3f005669808354045b74df8b73f45d9968eb464b8bb791fae3d",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/pbc_scf_from_pyscf.py"
+    },
+    {
+      "name": "atimesb.py",
+      "role": "backend",
+      "sha256": "2912f680cfa5034caed363fece926034d16cb58fcb91e1818dcea8a4a57586db",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/atimesb.py"
+    },
+    {
+      "name": "force.py",
+      "role": "backend",
+      "sha256": "ec8a5c68d0499506531997e39bfc530efcedde075486dec84113d0f618b8b20a",
+      "origin": "/online1/huangdq_group/liujie/taoyx/trans/md_new/src_force_dipole/force.py"
+    }
+  ],
+  "table_paths": [
+    "ucc/ucc_H2_data.txt",
+    "uccg/uccg_H2_data.txt",
+    "ucc/ucc_HeH+_data.txt",
+    "uccg/uccg_HeH+_data.txt",
+    "ucc/ucc_LiH_data.txt",
+    "uccg/uccg_LiH_data.txt",
+    "uccg/uccg_H4_data.txt",
+    "uccg/uccg_BeH2_data.txt",
+    "uccg/uccg_H2O_data.txt",
+    "1kupccgsd/1kupccgsd_LiH_data.txt",
+    "2kupccgsd/2kupccgsd_LiH_data.txt",
+    "3kupccgsd/3kupccgsd_LiH_data.txt",
+    "2kupccgsd/2kupccgsd_H4_data.txt",
+    "3kupccgsd/3kupccgsd_H4_data.txt",
+    "2kupccgsd/2kupccgsd_BeH2_data.txt",
+    "3kupccgsd/3kupccgsd_BeH2_data.txt",
+    "3kupccgsd/3kupccgsd_H2O_data.txt"
+  ],
+  "checkpoint_sha256": "aa7a64eee9fe8d0bab6331f26f1064e405b9d2976a6ed96f93e048fb53b05675",
+  "baseline_log_sha256": "16a2fb47cea595f23cdea0a2543566dca32a9ca9db962a1d45aeeedf8609bae5",
+  "source_prefix": "/home/huangdq_group/liujie/data/taoyx/trans",
+  "legacy_environment_hint": "test_2",
+  "force_verification": "USER_CONFIRMED_COMPLETED_NOT_REPEATED",
+  "scientific_scope": "historical_legacy_model_timestep_control_only_not_new_independent_model",
+  "dt_old": 5.0,
+  "dt_new": 2.5,
+  "end_time_au": 28460.0,
+  "expected_old_frames": 5693,
+  "expected_new_frames": 11385
+}
