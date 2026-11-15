@@ -1,54 +1,47 @@
-# QCML: source code and test inputs
+# QCML source code and test inputs
 
-Repository: [GIT_REPOSITORY_URL]
+Repository: https://github.com/wanlingyun4152/QCML
 
-This distribution contains computational source code, source configuration, and input-only test examples. The test arrays were exported from the existing held-out splits without copying parameter targets, predicted values, reference energies, wavefunctions or validation scores. The scientific code is retained from the previously verified source snapshots.
-
-## Layout
+This distribution provides the source code and the input portions of the held-out splits accompanying the revised QCML study. The test files contain geometry identifiers and model inputs only. The LiH dynamics example provides its initial conditions. Model checkpoints, fitted circuit parameters, reference energies, predictions, and run outputs are excluded.
 
 | Path | Contents |
 | --- | --- |
-| code/original_transformer/ | Original Transformer source; its data path is configurable through QCML_DATA_DIR |
-| code/joint17/ | Revised 17-task training, data preparation and evaluation source |
-| code/joint_n2/ | Joint original-task + N₂ Transformer source and its original input/schema definitions |
-| code/n2_reference/ | N₂ reference generation and dataset export source |
-| code/dynamics/nve_lih/ | Corrected-force NVE implementation and original source evidence |
-| code/controls/ | Basis-transfer and shared GNN/independent LiH control implementations |
-| tests/inputs/ | Test geometries, feature-only NPZ/CSV files, feature scaling and parameter definitions |
-| scripts/check_test_inputs.py | Check delivered input hashes, dimensions and sample counts |
-| scripts/predict_joint_inputs.py | Forward inference with a separately supplied joint checkpoint |
-
-The model cohorts retain their original distinctions. The N₂ example uses the joint model; no standalone N₂ training data or result comparison is distributed. Historical source may contain unused modes for compatibility, but those modes have no precomputed result files in this package.
+| `code/original_transformer/` | Historical Transformer source for the original study and its original split procedure. |
+| `code/joint17/` | Geometry-grouped 17-task Transformer and loss-ablation source. |
+| `code/controls/joint17_gnn/` | Shared molecular GNN and Transformer comparison on 17 STO-3G tasks. |
+| `code/controls/joint17_parallel/` | Separate LiH five-ansatz architecture control. |
+| `code/joint_n2/`, `code/n2_reference/` | Joint 18-task model, N₂ reference generation, and LiH label-continuation interface. |
+| `code/controls/basis_transfer/` | LiH basis adaptation source and fixed split definition. |
+| `code/dynamics/nve_lih/` | LiH NVE implementation and source used to define the dynamics protocol. |
+| `tests/inputs/` | Checked geometry, feature arrays, feature scaling and generator definitions. |
 
 ## Test inputs
 
-| Input group | Cases | Contents |
+| Case | Count | Input data |
 | --- | ---: | --- |
-| Original 17-task held-out split | 605 | 14 input features per sample, physical input features, geometry/task identifiers and fixed input scaling |
-| Joint N₂ held-out split | 9 | 6 input features per sample, test geometries, fixed scaling, molecular settings and generator definitions |
-| LiH held-out subset | 44 | Bond geometries and molecular/ansatz settings |
-| LiH basis examples | 30 per basis | Existing test geometries for STO-3G, 6-31G* and cc-pVDZ |
-| LiH dynamics | 1 initial state | Coordinates, velocities, masses, time step and step count |
+| Original-task held-out set (grouped split) | 605 records | Fourteen descriptors per record; original identifiers and scaling. |
+| N₂/UCCSD held-out set (joint 18-task model) | 9 geometries | Six descriptors per record, scaling and generator definitions. |
+| LiH/2-UpCCGSD held-out subset | 44 geometries | Bond lengths and task identity. These geometries are a subset of the 605 records. |
+| LiH basis adaptation | 30 geometries per basis | Fixed test geometries for STO-3G, 6-31G* and cc-pVDZ. |
+| LiH dynamics | 1 initial condition | Positions, velocities, masses, time step and steps. |
 
-HOMO/LUMO quantities are retained only where they are required model input features. They are not target VQE/FCI energies. No trained checkpoint, target theta array, CI wavefunction, density matrix, cached Hamiltonian/integral result, trajectory, training history, score table, figure or manuscript result data is included.
+The grouped 605-row split is used in the revision experiments. It is not the row-wise split of the original training script. The documented GNN/Transformer comparisons use their validation sets; the public test files do not include scores. For the joint 18-task Transformer, the LiH/2-UpCCGSD overlay changes supervised VQE parameter labels at the same coordinates. The exported inputs are the same for the original 17-task domain before and after applying the overlay. HOMO/LUMO descriptors follow the recorded orbital conventions of the supplied input features.
 
-## Check the inputs
+## Check the unpacked release
 
-The input checker requires NumPy and does not load a model:
+From the directory containing this README:
 
 ```bash
+python -m pip install -r requirements-input-check.txt
 python scripts/check_test_inputs.py
-```
-
-The expected status is TEST_INPUTS_OK. To check the full extracted package bytes, run from its root:
-
-```bash
 sha256sum --quiet --strict -c FILES_SHA256SUMS
 ```
 
-## Optional joint-model inference
+The input checker verifies file hashes, counts, feature identities and order, and the numerical agreement between each feature array and its CSV/scaling metadata. `SOURCE_FILES.csv` records the provenance of source files and configurations.
 
-With PyTorch installed and your separately supplied trained joint checkpoint:
+## Optional inference
+
+The following command uses PyTorch and a separately supplied checkpoint of the shared 18-task Transformer. Substitute `tests/inputs/legacy17/model_inputs.npz` for the original-task domain of that same checkpoint:
 
 ```bash
 python scripts/predict_joint_inputs.py \
@@ -57,10 +50,6 @@ python scripts/predict_joint_inputs.py \
   --out outputs/n2_forward
 ```
 
-Use tests/inputs/legacy17/model_inputs.npz for the original-task domain of the same joint model. The wrapper reads only input features and model weights. Predictions are generated only when you run it, in a fresh output directory ignored by Git. No prediction outputs are prepackaged. The input checker and byte checks were run locally; the new forward wrapper received static checks only because this packaging environment does not have PyTorch installed.
+It writes newly predicted parameters from the feature array. A checkpoint from the 17-task comparison, the original historical network, or the independent LiH model uses a different interface.
 
-## Original full-data interfaces
-
-Training and reference-scored evaluation source retains its original full-dataset contracts and file locks. Those interfaces need user-provided training labels, reference data or checkpoints. The new tests/inputs files are input-only exports, not replacements for the old labelled train/validation/test archives. Accordingly, the archived cluster.sh full-data preflight and the historical NVE staging driver are not the input-check command for this distribution. Computational dependencies vary by component; the existing component requirements and source imports identify the full runtime needs.
-
-Precomputed reference tables, raw VQE-labelled training tables, analysis/plotting datasets, paper-reply builders, run logs, model weights and prior server-recovery reports were removed from the upload scope. Missing historical run assets are outside this source-and-test-input release and do not require another collection round for this upload.
+The full-data training and reference-scored evaluation drivers require external archives. For historical runs, pass the exact prepared version used by the run; preserve the original manifest and file locks. The input-only files in this release and any later FCI reference tables cannot replace those archives. For the 17-task comparison, the external prepared directory contains `manifest.json`, `schema.json`, `samples.tsv`, and the split arrays. See `code/controls/joint17_gnn/README.md` for preflight and training commands.

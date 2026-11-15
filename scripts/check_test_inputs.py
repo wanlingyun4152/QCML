@@ -35,6 +35,47 @@ def load_inputs(path):
     return data
 
 
+
+def agree(actual, expected, label):
+    if not np.array_equal(actual, expected):
+        raise ValueError('Mismatch between input files: '+label)
+
+
+def validate_features(old, n2):
+    with (INPUTS/'legacy17/test_inputs.csv').open(newline='',encoding='utf-8') as f:
+        rows = list(csv.DictReader(f))
+    meta = json.loads((INPUTS/'legacy17/feature_metadata.json').read_text(encoding='utf-8'))
+    feat = meta['numeric_features']
+    if len(rows)!=605 or len(feat)!=8 or meta['feature_order'][:8]!=feat or meta['preprocessing']['fit_split']!='train':
+        raise ValueError('Unexpected legacy feature definition')
+    if list(rows[0])!=['global_row','sample_id','task','system','ansatz']+feat:
+        raise ValueError('Unexpected column in legacy input CSV')
+    x = np.asarray([[float(r[k]) for k in feat] for r in rows])
+    agree(x,old['raw_features'][:,:8],'legacy physical features')
+    agree(old['R_angstrom'],x[:,0],'legacy bond lengths')
+    agree(old['global_indices'],[int(r['global_row']) for r in rows],'legacy row identifiers')
+    agree(old['task'],[r['task'] for r in rows],'legacy task names')
+    agree(old['system'],[r['system'] for r in rows],'legacy systems')
+    indicators = np.asarray([['system_'+r['system']==name for name in meta['feature_order'][8:]] for r in rows])
+    if not (indicators.sum(axis=1)==1).all():raise ValueError('Unexpected molecule encoding')
+    agree(indicators,old['raw_features'][:,8:],'legacy molecule encoding')
+    p = meta['preprocessing']
+    scaled = (x-np.asarray(p['mean']))/np.asarray(p['scale'])
+    agree(np.hstack((scaled,indicators)).astype(np.float32),old['features'],'legacy scaling')
+
+    with (INPUTS/'n2/test_inputs.csv').open(newline='',encoding='utf-8') as f:
+        rows = list(csv.DictReader(f))
+    meta = json.loads((INPUTS/'n2/feature_metadata.json').read_text(encoding='utf-8'))
+    feat = meta['feature_order']
+    if len(rows)!=9 or len(feat)!=6 or list(rows[0])!=['index']+feat:
+        raise ValueError('Unexpected N2 feature definitions')
+    x=np.array([[float(r[k]) for k in feat] for r in rows]); p=meta['preprocessing']
+    agree(x,n2['raw_features'],'N2 physical features')
+    agree(x[:,0],n2['R_angstrom'],'N2 bond lengths')
+    agree(n2['index'],[int(r['index']) for r in rows],'N2 row identifiers')
+    agree(((x-np.asarray(p['offset']))/np.asarray(p['scale'])).astype(np.float32),n2['features'],'N2 scaling')
+
+
 def main():
     manifest = json.loads((INPUTS/'manifest.json').read_text(encoding='utf-8'))
     for name,digest in manifest['files_sha256'].items():
@@ -43,16 +84,20 @@ def main():
             raise ValueError('Input checksum failed: '+name)
     old = load_inputs(INPUTS/'legacy17/model_inputs.npz')
     n2 = load_inputs(INPUTS/'n2/model_inputs.npz')
+    validate_features(old, n2)
     if old['features'].shape!=(605,14) or n2['features'].shape!=(9,6):
         raise ValueError('Test sample counts differ from the recorded splits')
     if len(set(old['task']))!=17:
         raise ValueError('Legacy task count changed')
     with (INPUTS/'lih/test_geometries.csv').open(newline='',encoding='utf-8') as stream:
         lih = list(csv.DictReader(stream))
-    if len(lih)!=44:
+    selected = old['task']=='2kupccgsd/LiH'
+    agree(old['global_indices'][selected],[int(row['global_row']) for row in lih],'grouped LiH subset indices')
+    agree(old['R_angstrom'][selected],[float(row['R_angstrom']) for row in lih],'grouped LiH subset geometries')
+    if len(lih)!=44 or any(r['task']!='2kupccgsd/LiH' or r['system']!='LiH' for r in lih):
         raise ValueError('LiH held-out input count changed')
     basis = json.loads((INPUTS/'basis_cases/lih_cases.json').read_text())
-    if len(basis['cases'])!=3 or any(len(c['bond_lengths_angstrom'])!=30 for c in basis['cases']):
+    if {c['basis'] for c in basis['cases']}!={'sto-3g','6-31g*','cc-pvdz'} or any(len(c['bond_lengths_angstrom'])!=30 or len(set(c['point_indices']))!=30 for c in basis['cases']):
         raise ValueError('Basis input geometry counts changed')
     dynamics = json.loads((INPUTS/'dynamics/lih_initial_conditions.json').read_text())
     if np.asarray(dynamics['coordinates_bohr']).shape!=(2,3) or np.asarray(dynamics['velocities_au']).shape!=(2,3):

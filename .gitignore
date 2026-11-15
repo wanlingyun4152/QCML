@@ -31,3 +31,11 @@ history*.tsv
 metrics*.json
 *predictions*.npz
 predicted_parameters.npz
+
+# Keep all private labeled arrays and run data out of the release.
+*.npz
+!tests/inputs/**/model_inputs.npz
+data/
+legacy_FCI/
+training_data/
+prepared/
